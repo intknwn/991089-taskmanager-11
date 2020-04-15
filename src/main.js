@@ -3,6 +3,7 @@ import {createFilterTemplate} from "./components/filter.js";
 import {createLoadMoreButtonTemplate} from "./components/load-more-button.js";
 import {createTaskEditTemplate} from "./components/task-edit.js";
 import {createTaskTemplate} from "./components/task.js";
+import {createTasksTemplate} from "./components/tasks.js";
 import {createSiteMenuTemplate} from "./components/site-menu.js";
 import {createSortingTemplate} from "./components/sorting.js";
 import {generateFilters} from "./mock/filter.js";
@@ -28,6 +29,7 @@ render(siteMainElement, createFilterTemplate(filters), `beforeend`);
 render(siteMainElement, createBoardTemplate(), `beforeend`);
 
 const boardElement = siteMainElement.querySelector(`.board`);
+render(boardElement, createTasksTemplate(), `beforeend`);
 const taskListElement = siteMainElement.querySelector(`.board__tasks`);
 
 render(boardElement, createSortingTemplate(), `afterbegin`);
